@@ -14,14 +14,24 @@ const app = express();
 const server = http.createServer(app);
 
 // Enable CORS for frontend access
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://assign-plum.vercel.app',
+    // Add more allowed origins if needed
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // Create the Socket.IO server
 const io = new Server(server, {
     cors: {
-        origin: "https://assign-yash-baggas-projects.vercel.app/", // You can restrict this to your frontend domain in production
-        methods: ["GET", "POST"]
+        origin: [
+          'https://assign-plum.vercel.app',
+          // Add more allowed origins if needed
+        ],
+        methods: ["GET", "POST"],
+        credentials: true
     }
 });
 
