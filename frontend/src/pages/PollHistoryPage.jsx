@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PollHistory from "../components/PollHistory"; // Your styled component
 
-const BACKEND_URL = "http://localhost:5000";
+const BACKEND_URL = "https://assign-gboe.onrender.com";
 
 const PollHistoryPage = () => {
     const [pollHistory, setPollHistory] = useState([]);

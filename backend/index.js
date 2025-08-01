@@ -20,13 +20,13 @@ app.use(express.json());
 // Create the Socket.IO server
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173", // You can restrict this to your frontend domain in production
+        origin: "https://assign-yash-baggas-projects.vercel.app/", // You can restrict this to your frontend domain in production
         methods: ["GET", "POST"]
     }
 });
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI) 
     .then(() => console.log("✅ MongoDB connected successfully"))
     .catch((err) => console.error("❌ MongoDB error:", err));
 
