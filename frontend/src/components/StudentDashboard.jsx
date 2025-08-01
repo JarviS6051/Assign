@@ -130,7 +130,7 @@ const StudentDashboard = () => {
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
                                         placeholder="Your full name"
-                                        className="w-full p-3 rounded-full bg-muted/10 border border-muted text-dark focus:outline-none focus:ring-2 focus:ring-primary"
+                                        className="w-full p-3 bg-muted/10 border border-muted text-dark focus:outline-none focus:ring-2 focus:ring-primary"
                                     />
                                 </div>
 
