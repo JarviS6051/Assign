@@ -13,12 +13,15 @@ dotenv.config();
 const app = express();
 const server = http.createServer(app);
 
+// Add this before app.use(cors(...)) and Socket.IO initialization
+const allowedOrigins = [
+  'https://assign-plum.vercel.app',
+  'https://assign-yash-baggas-projects.vercel.app'
+];
+
 // Enable CORS for frontend access
 app.use(cors({
-  origin: [
-    'https://assign-plum.vercel.app',
-    // Add more allowed origins if needed
-  ],
+  origin: allowedOrigins,
   credentials: true
 }));
 app.use(express.json());
@@ -26,10 +29,7 @@ app.use(express.json());
 // Create the Socket.IO server
 const io = new Server(server, {
     cors: {
-        origin: [
-          'https://assign-plum.vercel.app',
-          // Add more allowed origins if needed
-        ],
+        origin: allowedOrigins,
         methods: ["GET", "POST"],
         credentials: true
     }
